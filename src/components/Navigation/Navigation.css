@@ -1,0 +1,26 @@
+.main-nav {
+    background-color: white;
+    text-align: center;
+    font-family: "Toronto Gothic";
+    font-size: 3em;
+    font-weight: 100;
+    /*border-bottom: 1px solid rgba(0, 0, 0, 1); 
+    Nav bar bottom border*/
+    position: relative;
+    z-index: 60;
+}
+
+.cart-button {
+    height: 100%;
+    background: none;
+	color: black;
+	border: none;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+    width: 3em;
+}
+
+.cart-button:hover {
+    color:rgba(0, 128, 255, 0.8);
+}

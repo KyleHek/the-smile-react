@@ -1,0 +1,94 @@
+.cart-item {
+    padding: 20px 20px 20px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    mix-blend-mode: multiply;
+    position: relative;
+    z-index: 10;
+}
+
+.cart-item img {
+    width: 150px;
+    height: auto;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    position: relative;
+    z-index: -1; /* Adjust the z-index for the img element */
+}
+
+.cart-item p {
+    width: 30%;
+    text-align: center;
+    /* width: 20%; */
+    color: rgba(0, 0, 0, 0.8);
+}
+
+/* .quantity-input {
+    margin-left: 10px;
+    width: 3em;
+    position: relative;
+    z-index: -1; 
+} */
+
+.quantity {
+    position: relative;
+    padding-top: 20px;
+    margin-right: 60px;
+    display: flex;
+    flex-direction: row;
+    left: 25px;
+    bottom: 10px;
+}
+
+.quantity input {
+    background-color: inherit;
+    border: none;
+    text-align: center;
+    width: 32px;
+    font-size: 16px;
+    color: #43484D;
+    font-weight: 300;
+}
+ 
+.quantity button[class*=btn] {
+    width: 30px;
+    height: 30px;
+    background-color: #E1E8EE;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    z-index: 9;
+}
+
+.minus-btn img {
+    margin-bottom: 3px;
+    width: fit-content;
+    box-shadow: none;
+    z-index: 10;
+}
+
+.plus-btn img {
+    margin-top: 2px;
+    width: fit-content;
+    box-shadow: none;
+    z-index: 10;
+}
+   
+.btn-remove {
+    background: none;
+	color: black;
+	border: none;
+	font-family: "Toronto Gothic";
+    font-size: larger;
+	cursor: pointer;
+	outline: inherit;
+    /* box-shadow: 2px 2px 4px rgba(0,0,0,0.19); */
+}
+
+.btn-remove:hover {
+    color:rgba(0, 128, 255, 0.8);
+}
+
+.title-size {
+    font-size: larger;
+}

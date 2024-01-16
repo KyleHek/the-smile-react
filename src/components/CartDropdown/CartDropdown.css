@@ -1,0 +1,46 @@
+.cart-dropdown {
+    position: absolute;
+    padding: 5px;
+    right: 0;
+    width: 100%;
+    max-width: 40em;
+    /* left: 60%;
+    width: 40%; */
+    background-color: whitesmoke;
+    border-radius: 0px 0px 1px 5px;
+    z-index: 50;
+}
+
+.cart-items {
+    position: relative;
+    max-height: 400px; /* Set your desired fixed height here */
+    overflow-y: auto;
+    box-shadow: inset 0px 2px 5px 1px rgba(0, 0, 0, 0.3);
+    box-sizing: border-box;
+    z-index: 40;
+}
+
+.cart-btn {
+    background-color: transparent;
+}
+
+.no-dec {
+    text-decoration: none;
+    color: black;
+}
+
+.no-dec:hover {
+    color:rgba(0, 128, 255, 0.8);
+}
+  
+.empty-basket {
+    height: 5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.total-position {
+    padding: 20px;
+    text-align: end;
+}

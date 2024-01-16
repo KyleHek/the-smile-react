@@ -1,0 +1,13 @@
+.checkout-items {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.purchase-section {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.empty-basket {
+    text-align: center;
+}

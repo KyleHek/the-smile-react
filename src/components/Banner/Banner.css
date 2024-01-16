@@ -1,0 +1,12 @@
+.banner {
+    background-color: rgba(0, 0, 0, .2);
+    background-image: url('/src/assets/background.jpg');
+    background-blend-mode: multiply;
+    background-size: cover;
+    padding-bottom: 30px;
+    margin-bottom: 20px;
+}
+
+.band-name-large {
+    font-size: 8em;
+}

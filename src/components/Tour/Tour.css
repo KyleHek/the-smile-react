@@ -1,0 +1,34 @@
+.tour-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid black;
+    padding-bottom: 1em;
+    margin-bottom: 1em;
+}
+
+.tour-row:last-child {
+    border-bottom: none;
+}
+
+.tour-item {
+    text-align: center;
+}
+
+.tour-date {
+    color: #555;
+    font-weight: bold;
+    min-width: 10%;
+}
+
+.tour-city {
+    min-width: 20%;
+}
+
+.tour-arena {
+    min-width: 20%;
+}
+
+.tour-btn {
+    max-width: 20%;
+}
