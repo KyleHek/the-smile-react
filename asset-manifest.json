@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/the-smile-react/static/css/main.e50edec5.css",
-    "main.js": "/the-smile-react/static/js/main.9b06ac92.js",
+    "main.js": "/the-smile-react/static/js/main.ad9577c5.js",
     "static/js/787.d3564481.chunk.js": "/the-smile-react/static/js/787.d3564481.chunk.js",
     "static/media/background.jpg": "/the-smile-react/static/media/background.681b68795f53130c20b0.jpg",
     "static/media/band.jpg": "/the-smile-react/static/media/band.64fd978e14be9502dff1.jpg",
@@ -18,11 +18,11 @@
     "static/media/minus.svg": "/the-smile-react/static/media/minus.d3e522df1204dbb825c6f2cc13900de2.svg",
     "index.html": "/the-smile-react/index.html",
     "main.e50edec5.css.map": "/the-smile-react/static/css/main.e50edec5.css.map",
-    "main.9b06ac92.js.map": "/the-smile-react/static/js/main.9b06ac92.js.map",
+    "main.ad9577c5.js.map": "/the-smile-react/static/js/main.ad9577c5.js.map",
     "787.d3564481.chunk.js.map": "/the-smile-react/static/js/787.d3564481.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e50edec5.css",
-    "static/js/main.9b06ac92.js"
+    "static/js/main.ad9577c5.js"
   ]
 }
