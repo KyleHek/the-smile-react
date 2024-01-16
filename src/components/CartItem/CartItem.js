@@ -31,6 +31,7 @@ const CartItem = ({ image, title, price, quantity, removeCartItem, updateQuantit
         type="button" 
         name="button"
         onClick={() => updateQuantity(title, 'decrement')}
+        readOnly={true}
         >
           <img src={minus} alt="" />
         </button>

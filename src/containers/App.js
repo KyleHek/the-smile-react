@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -31,6 +31,7 @@ function App() {
   };
 
   const addToCart = (item) => {
+    
     // Check if the item is already in the cart
     const existingItemIndex = cartItems.findIndex((cartItem) => cartItem.title === item.title);
   
@@ -96,7 +97,7 @@ function App() {
   ];
 
   return (
-    <Router>
+    <Router basename='/the-smile-react'>
       <div className="App">
         <ToastContainer className="custom-toast-container"/>
         {showCart && <Backdrop onClick={() => setShowCart(false)} />} 
@@ -112,7 +113,8 @@ function App() {
         )}
         <Banner />
         <Routes>
-          <Route path="/" element={<ToursSection />} />
+          <Route path="/" element={<Navigate to="/home" />} />
+          <Route path="/home" element={<ToursSection />} />
           <Route path="/store" element={
             <>
               <ShopSection sectionTitle="MUSIC" items={musicItems} addToCart={addToCart}/>
