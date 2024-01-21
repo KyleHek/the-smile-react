@@ -22,7 +22,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "homepage": "https://KyleHek.github.io/the-smile-react/",
+  "homepage": "https://the-smile.onrender.com/",
   "eslintConfig": {
     "extends": [
       "react-app",

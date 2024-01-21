@@ -160,7 +160,7 @@ function App() {
         )}
         <Banner />
         <Routes>
-          <Route path="" element={<Navigate to="/home" />} />
+          <Route path="/" element={<Navigate to="/home" />} />
           <Route path="/home" element={<ToursSection />} />
           <Route path="/store" element={
             <>
