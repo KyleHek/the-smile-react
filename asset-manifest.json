@@ -1,28 +1,23 @@
 {
   "files": {
-    "main.css": "/the-smile-react/static/css/main.e13619c3.css",
-    "main.js": "/the-smile-react/static/js/main.f24b8286.js",
+    "main.css": "/the-smile-react/static/css/main.11d7173b.css",
+    "main.js": "/the-smile-react/static/js/main.4995d5d9.js",
     "static/js/787.d3564481.chunk.js": "/the-smile-react/static/js/787.d3564481.chunk.js",
     "static/media/background.jpg": "/the-smile-react/static/media/background.681b68795f53130c20b0.jpg",
     "static/media/band.jpg": "/the-smile-react/static/media/band.64fd978e14be9502dff1.jpg",
-    "static/media/digital.webp": "/the-smile-react/static/media/digital.87e26da7a33c7cb2010f.webp",
-    "static/media/blackvinyl.webp": "/the-smile-react/static/media/blackvinyl.30a18679823ad4469ea9.webp",
-    "static/media/yellowvinyl.webp": "/the-smile-react/static/media/yellowvinyl.cbcf4a0fe1a37752f804.webp",
-    "static/media/cd.webp": "/the-smile-react/static/media/cd.135be67638a94eed57a6.webp",
-    "static/media/hextshirt.webp": "/the-smile-react/static/media/hextshirt.b6dbbbfd5c1f84aebb12.webp",
-    "static/media/greytshirt.webp": "/the-smile-react/static/media/greytshirt.9491951e1cb86cbe44a9.webp",
-    "static/media/blacktshirt.webp": "/the-smile-react/static/media/blacktshirt.0c4467badaefaed8ac30.webp",
+    "static/media/cancel.png": "/the-smile-react/static/media/cancel.6113071412906ba1bb21.png",
+    "static/media/success.png": "/the-smile-react/static/media/success.a8d20cd48e2e0d022083.png",
     "static/media/Toronto Gothic.woff": "/the-smile-react/static/media/Toronto Gothic.2cdfe43b2c35bc422613.woff",
     "static/media/Toronto Gothic.woff2": "/the-smile-react/static/media/Toronto Gothic.b05b44ab7e750d56391f.woff2",
     "static/media/plus.svg": "/the-smile-react/static/media/plus.9c70d34e13ed77728b9e679e67a15161.svg",
     "static/media/minus.svg": "/the-smile-react/static/media/minus.d3e522df1204dbb825c6f2cc13900de2.svg",
     "index.html": "/the-smile-react/index.html",
-    "main.e13619c3.css.map": "/the-smile-react/static/css/main.e13619c3.css.map",
-    "main.f24b8286.js.map": "/the-smile-react/static/js/main.f24b8286.js.map",
+    "main.11d7173b.css.map": "/the-smile-react/static/css/main.11d7173b.css.map",
+    "main.4995d5d9.js.map": "/the-smile-react/static/js/main.4995d5d9.js.map",
     "787.d3564481.chunk.js.map": "/the-smile-react/static/js/787.d3564481.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e13619c3.css",
-    "static/js/main.f24b8286.js"
+    "static/css/main.11d7173b.css",
+    "static/js/main.4995d5d9.js"
   ]
 }
