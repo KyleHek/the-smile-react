@@ -2,7 +2,7 @@ import React from 'react';
 import CartItem from '../CartItem/CartItem';
 import './Checkout.css';
 
-const Checkout = ({ cartItems, calculateTotal, removeCartItem, updateQuantity }) => {
+const Checkout = ({ cartItems, calculateTotal, removeCartItem, updateQuantity, purchaseItems }) => {
     const hasItems = cartItems.length > 0;
     const total = calculateTotal();
 
@@ -33,7 +33,11 @@ const Checkout = ({ cartItems, calculateTotal, removeCartItem, updateQuantity })
             {hasItems && (
                 <div className='purchase-section'>
                     <span>Total: £{total.toFixed(2)}</span>
-                    <button className='btn btn-primary'>Purchase</button>
+                    <button 
+                    className='btn btn-primary'
+                    onClick={purchaseItems}>
+                        Purchase
+                    </button>
                 </div>
             )}
         </section>

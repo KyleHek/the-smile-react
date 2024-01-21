@@ -1,0 +1,18 @@
+.sc-img {
+    width: 200px;
+    margin: 2rem 0;
+}
+
+.sc-p {
+    max-width: 600px;
+    font-size: 0.970rem;
+    text-align: center;
+    margin: 0.5rem 0;
+}
+
+.sc-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

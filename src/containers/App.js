@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Route, Routes, Navigate } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -10,28 +10,28 @@ import Banner from '../components/Banner/Banner.js';
 import ToursSection from '../components/ToursSection/ToursSection.js';
 import ShopSection from '../components/ShopSection/ShopSection.js';
 import Checkout from '../components/Checkout/Checkout.js';
+import SuccessSection from '../components/SuccessSection/SuccessSection.js';
+import CancelSection from '../components/CancelSection/CancelSection.js';
 import AboutSection from '../components/AboutSection/AboutSection.js';
 import Footer from '../components/Footer/Footer.js';
 import './App.css';
 
-import BlackVinyl from '../assets/blackvinyl.webp';
-import YellowVinyl from '../assets/yellowvinyl.webp';
-import Digital from '../assets/digital.webp';
-import CD from '../assets/cd.webp';
-import BlackTShirt from '../assets/blacktshirt.webp';
-import HexTShirt from '../assets/hextshirt.webp';
-import GreyTShirt from '../assets/greytshirt.webp';
-
 function App() {
-  const [cartItems, setCartItems] = useState([]);
+  const [cartItems, setCartItems] = useState(() => {
+    const storedCartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+    return storedCartItems;
+  });
   const [showCart, setShowCart] = useState(false);
+
+  useEffect(() => {
+    localStorage.setItem('cartItems', JSON.stringify(cartItems));
+  }, [cartItems]);
 
   const closeCart = () => {
     setShowCart(false);
   };
 
   const addToCart = (item) => {
-    
     // Check if the item is already in the cart
     const existingItemIndex = cartItems.findIndex((cartItem) => cartItem.title === item.title);
   
@@ -54,7 +54,7 @@ function App() {
       if (item.title === title) {
         if (operation === 'decrement' && item.quantity === 1) {
           // Show an error message using react-toastify
-          toast.error('Cannot decrease quantity past 1. Please click X to remove.');
+          toast.error('Cannot decrease quantity below 1. Please click X to remove.');
           return item;
         }
         return {
@@ -80,24 +80,71 @@ function App() {
     return cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
   };
 
-  //use simple server and database to grab shop items
+  const purchaseItems = () => {
+    const cartItems = JSON.parse(localStorage.getItem('cartItems'));
+
+    if (!cartItems || cartItems.length === 0) {
+      // handle empty cart
+      console.log('Cart is empty');
+      return;
+    }
+
+    fetch('http://localhost:3000/stripe-checkout', {
+      method: 'post',
+      headers: new Headers({'Content-Type': 'application/Json'}),
+      body: JSON.stringify({
+        items: cartItems,
+      }),
+    })
+    .then((res) => res.json())
+    .then((response) => {
+      if (response.success) {
+        const checkoutUrl = response.checkoutUrl;
+        // Redirect to checkoutUrl
+        window.location.href = checkoutUrl;
+      } else {
+        console.error('error creating Checkout session:', response.error);
+      }
+    })
+    .catch((err) => console.log(err));
+  };
+
+  useEffect(() => {
+    const handleSuccessRedirect = () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      if (urlParams.get('success')) {
+        // Clear local storage and update state on successful payment
+        localStorage.removeItem('cartItems');
+        setCartItems([]); // Assuming you have a state setter function for cartItems
+      }
+    };
+    
+    handleSuccessRedirect();
+
+    // Attach the event listener
+    window.addEventListener('popstate', handleSuccessRedirect);
+  
+    // Clean up the event listener on component unmount
+    return () => {
+      window.removeEventListener('popstate', handleSuccessRedirect);
+    };
+  }, [setCartItems]);
+
+  // grabbing shop items and images
   const musicItems = [
-    { title: 'YELLOW 2LP', image: YellowVinyl, price: 28 },
-    { title: 'BLACK 2LP', image: BlackVinyl, price: 25 },
-    { title: 'CD', image: CD, price: 10 },
-    { title: 'DIGITAL', image: Digital, price: 8 },
-    // Add more items as needed
+    { title: 'YELLOW 2LP', image: 'https://i.ibb.co/dDpbKGx/yellowvinyl.webp', price: 28 },
+    { title: 'BLACK 2LP', image: 'https://i.ibb.co/H7SL1pB/blackvinyl.webp', price: 25 },
+    { title: 'CD', image: 'https://i.ibb.co/8MgzjsJ/cd.webp', price: 10 },
+    { title: 'DIGITAL', image: 'https://i.ibb.co/S0mCNYP/digital.webp', price: 8 },
   ];
 
   const merchItems = [
-    { title: 'BLACK T-SHIRT', image: BlackTShirt, price: 30 },
-    { title: 'HEX T-SHIRT', image: HexTShirt, price: 30 },
-    { title: 'GREY T-SHIRT', image: GreyTShirt, price: 30 },
-    // Add more items as needed
+    { title: 'BLACK T-SHIRT', image: 'https://i.ibb.co/18S5pth/blacktshirt.webp', price: 30 },
+    { title: 'HEX T-SHIRT', image: 'https://i.ibb.co/zhwM0xF/hextshirt.webp', price: 30 },
+    { title: 'GREY T-SHIRT', image: 'https://i.ibb.co/TwNyZgc/greytshirt.webp', price: 30 },
   ];
 
   return (
-    <Router basename='/the-smile-react'>
       <div className="App">
         <ToastContainer className="custom-toast-container"/>
         {showCart && <Backdrop onClick={() => setShowCart(false)} />} 
@@ -122,11 +169,12 @@ function App() {
             </>
           } />
           <Route path="/about" element={<AboutSection />} />
-          <Route path='/checkout' element={<Checkout cartItems={cartItems} calculateTotal={calculateTotal} updateQuantity={updateQuantity} removeCartItem={removeCartItem}/>} />
+          <Route path='/checkout' element={<Checkout cartItems={cartItems} calculateTotal={calculateTotal} updateQuantity={updateQuantity} removeCartItem={removeCartItem} purchaseItems={purchaseItems}/>} />
+          <Route path='/success' element={<SuccessSection />} />
+          <Route path='/cancel' element={<CancelSection />} />
         </Routes>
         <Footer />
       </div>
-    </Router>
   );
 }
 

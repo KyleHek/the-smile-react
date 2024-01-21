@@ -30,8 +30,8 @@ const CartDropdown = ({ cartItems, total, removeCartItem, closeCart, updateQuant
         <div className='total-position'>
           <span>Total: £{total.toFixed(2)}</span>
           <button 
-          className="btn btn-primary cart-btn"
-          onClick={closeCart}>
+            className="btn btn-primary cart-btn"
+            onClick={closeCart}>
             <Link className='no-dec' to="/checkout">CHECKOUT</Link>
           </button>
         </div>

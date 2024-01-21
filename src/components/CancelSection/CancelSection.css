@@ -1,0 +1,19 @@
+.cc-img {
+    width: 200px;
+    margin: 2rem 0;
+}
+
+.cc-p {
+    max-width: 600px;
+    font-size: 0.970rem;
+    text-align: center;
+    margin: 0.5rem 0;
+}
+
+.cc-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
