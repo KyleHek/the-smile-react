@@ -12,6 +12,6 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 * [react-toastify](https://www.npmjs.com/package/react-toastify)
 	* For stylish pop-up notifications
 
-For further information about the API look at [face-recognition-api](https://github.com/).	
+For further information about the API look at [the-smile-api](https://github.com/KyleHek/the-smile-api).	
 
-Look at [Working demo](https://the-smile-dsag.onrender.com/) deployed at [Render](https://render.com/).
+Look at [Working demo](https://the-smile.onrender.com) deployed at [Render](https://render.com/).
