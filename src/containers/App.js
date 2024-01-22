@@ -89,7 +89,7 @@ function App() {
       return;
     }
 
-    fetch('http://localhost:3000/stripe-checkout', {
+    fetch('https://the-smile-api.onrender.com/stripe-checkout', {
       method: 'post',
       headers: new Headers({'Content-Type': 'application/Json'}),
       body: JSON.stringify({
