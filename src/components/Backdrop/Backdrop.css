@@ -4,6 +4,6 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: rgba(0, 0, 0, 0.6); /* Adjust the opacity here */
+    background: rgba(0, 0, 0, 0.7); /* Adjust the opacity here */
     z-index: 10; /* Ensure the backdrop is behind other components but in front of the page content */
   }

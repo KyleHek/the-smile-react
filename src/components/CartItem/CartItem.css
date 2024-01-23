@@ -1,5 +1,5 @@
 .cart-item {
-    padding: 20px 20px 20px 20px;
+    padding: 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -13,33 +13,18 @@
     width: 100%;
     height: auto;
     box-shadow: 0 2px 5px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-    position: relative;
-    z-index: -1; /* Adjust the z-index for the img element */
 }
 
-
 .cart-item p {
-    width: 30%;
     text-align: center;
-    /* width: 20%; */
+    font-size: 1rem;
     color: rgba(0, 0, 0, 0.8);
 }
 
-/* .quantity-input {
-    margin-left: 10px;
-    width: 3em;
-    position: relative;
-    z-index: -1; 
-} */
-
 .quantity {
-    position: relative;
-    padding-top: 20px;
-    margin-right: 60px;
     display: flex;
-    flex-direction: row;
-    left: 25px;
-    bottom: 12px;
+    justify-content: center;
+    align-items: center;
 }
 
 .quantity input {
@@ -92,5 +77,24 @@
 }
 
 .title-size {
-    font-size: larger;
+    font-size: 1rem;
+}
+
+@media only screen and (max-width: 600px) {
+    .cart-item {
+        flex-direction: column; /* Stack cart items in a column for smaller screens */
+    }
+
+    .cart-item img {
+        max-width: 40%; /* Ensure the image takes full width on smaller screens */
+    }
+
+    .cart-item p {
+        width: 100%; /* Make the paragraph take full width on smaller screens */
+        margin-top: 10px; /* Add some spacing between the image and the paragraph */
+    }
+
+    .quantity {
+        margin-right: 0; /* Remove right margin for smaller screens */
+    }
 }
