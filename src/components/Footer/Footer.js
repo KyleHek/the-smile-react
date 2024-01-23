@@ -13,25 +13,19 @@ const Footer = () => {
           <li>
             <a href="https://www.youtube.com/channel/UCym53v2ao-wXBhSUIKxAekw" className="font" target="_blank" rel="noreferrer">
               <img src={Youtube} 
-              alt="Youtube Logo"
-              width={'30px'}
-              height={'auto'} />
+              alt="Youtube Logo" />
             </a>
           </li>
           <li>
             <a href="https://open.spotify.com/artist/6styCzc1Ej4NxISL0LiigM?si=6qh5ESiKQp6Us0pvr1g8rA" className="font" target="_blank" rel="noreferrer">
               <img src={Spotify} 
-              alt="Spotify Logo"
-              width={'30px'}
-              height={'auto'} />
+              alt="Spotify Logo" />
             </a>
           </li>
           <li>
             <a href="https://www.facebook.com/thesmiletheband" className="font" target="_blank" rel="noreferrer">
               <img src={Facebook} 
-              alt="Facebook Logo"
-              width={'30px'}
-              height={'auto'} />
+              alt="Facebook Logo" />
             </a>
           </li>
         </ul>

@@ -11,8 +11,28 @@
     border-bottom: none;
 }
 
+.tour-row span {
+    font-size: 1rem;
+}
+
+@media (max-width: 460px) {
+    .tour-row span {
+        font-size: 0.8rem; /* You can adjust the value as needed */
+    }
+}
+
+@media (max-width: 400px) {
+    .tour-row span {
+        font-size: 0.7rem; /* You can adjust the value as needed */
+    }
+    .tour-btn {
+        font-size: 1rem;
+    }
+}
+
 .tour-item {
     text-align: center;
+    flex: 1;
 }
 
 .tour-date {

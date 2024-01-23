@@ -1,13 +1,17 @@
 .about-band-image {
-    width: 20em;
+    max-width: 400px;
+    width: 100%;
     height: auto;
     border-radius: 5px;
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-    margin-bottom: 2em;
+    margin-bottom: 20px;
 } 
 
 section p {
+    max-width: 600px;
+    font-size: 0.970rem;
     text-align: center;
+    margin: 0.5rem 0;
 }
 
 .about-section {

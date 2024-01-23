@@ -8,5 +8,6 @@
 }
 
 .band-name-large {
+    translate: 0 1rem;
     font-size: 8em;
 }
